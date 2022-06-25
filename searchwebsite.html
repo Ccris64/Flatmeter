@@ -1,0 +1,165 @@
+<html>
+<head>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300&display=swap" rel="stylesheet">
+
+<title>Welcome! - Flatmeter</title>
+
+<style>
+body {
+    background:url("https://images5.alphacoders.com/372/372649.jpg") no-repeat center center fixed;
+    background-size:cover;
+}
+#topbar {
+    top:0;
+    left:0;
+    position:absolute;
+    background-color:rgba(100,100,100,0.6);
+    width:100%;
+    height:70px;
+    backdrop-filter:blur(20px);
+}
+
+.topbutton {
+    position:absolute;
+    float:left;
+    box-shadow: 0px 0px 28px 9px rgba(0,0,0,0.4);
+}
+#glogo {
+    width:50px;
+    height:50px;
+    background-color:white;
+    border-radius:100%;
+    top:10;
+    left:10;
+}
+
+#search {
+    margin: auto;
+    display: block;
+    text-align:center;
+    width:10%;
+    font: 25px Montserrat;
+    top:10;
+    left:45%;
+    outline:none;
+    height:50px;
+    border-style:hidden hidden solid hidden;
+    border-color:gray;
+    background-color:white;
+    border-radius:500px;
+}
+
+@keyframes clicked {
+    from {width:10%;}
+    to {width:80%;left:10%;border-color:green;}
+}
+
+#search:focus {
+    animation-name:clicked;
+    animation-duration:0.4s;
+    animation-fill-mode:both;
+}
+
+#center {
+    text-align:center;
+}
+
+#searchbutton {
+    background-color:white;
+    border-radius:100%;
+    width:50px;
+    height:50px;
+    left:96%;
+    top:10;
+}
+
+#clock {
+  position: absolute;
+  top: 70%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+#greeting {
+  position: absolute;
+  top: 30%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font: 60px Montserrat;
+  color:white;
+}
+
+#bottombar {
+	display:flex;
+	backdrop-filter:blur(20px);
+	left:0%;
+	position:fixed;
+	background-color:rgba(0,0,0,0.3);
+	bottom:0%;
+	transform:translateY(-50%, -50%);
+	height:68px;
+	width:100%;
+	border-radius:20px 20px 0px 0px;
+}
+
+.shortcut {
+	outline:none;
+	flex:1;
+	width:50px;
+	height:50px;
+	padding:10; 
+	border-radius:25px;
+}
+
+.shortcut:first-child {
+	margin-right:10px;
+}
+
+</style>
+</head>
+<body>
+<div id="topbar">
+
+<img id="glogo" onclick="opengoogle()" class="topbutton" src="https://cdn1.iconfinder.com/data/icons/google-s-logo/150/Google_Icons-09-512.png"></img>
+
+<input onsubmit="gsearch()" id="search" type="text" class="topbutton">
+
+</div>
+
+<div id="greeting">Welcome!</div>
+
+<iframe id="clock" src="https://free.timeanddate.com/clock/i8dylrcy/fs48/fcfff/tct/pct/ftb/tt0/tw0/tm1/ts1/tb4" frameborder="0" width="296" height="112" allowtransparency="true"></iframe>
+
+<div id="bottombar">
+
+<a href="https://discord.com"><img class="shortcut" src="https://w5fc.org/wp-content/uploads/2021/05/s9biyhs4lix61.jpg"></img></a>
+<a href="https://google.com"><img class="shortcut" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTQpmrVGQTCNoUrgtlpo0H8gRVu1c3DJLy8vA&usqp=CAU"></img></a>
+<a href="https://youtube.com"><img class="shortcut" src="https://upload.wikimedia.org/wikipedia/commons/7/72/YouTube_social_white_square_%282017%29.svg"></img></a>
+<a href="https://twitter.com"><img class="shortcut" src="https://t.ctcdn.com.br/_pO9rE3KYs3V-ODpJsxRFcZ67lI=/400x400/smart/filters:format(webp)/i489929.jpeg"></img></a>
+<a href="https://facebook.com"><img class="shortcut" src="https://upload.wikimedia.org/wikipedia/commons/thumb/f/ff/Facebook_logo_36x36.svg/2048px-Facebook_logo_36x36.svg.png"></img></a>
+<a href="https://apple.com"><img class="shortcut" src="https://img2.gratispng.com/20180408/spe/kisspng-apple-logo-symbol-computer-software-apple-logo-5aca6bee897d01.3912690915232153425632.jpg"></img></a>
+<a href="https://gmail.com"><img class="shortcut" src="https://pixlok.com/wp-content/uploads/2021/04/Gmail-Logo-PNG-768x768.jpg"></img></a>
+
+</div>
+<script>
+function opengoogle() {window.open('https://google.com/')}
+document.getElementById("search").addEventListener("keydown", function(event){
+	if (event.key == "Enter") {
+		gsearch()
+	}
+})
+function gsearch() {
+	var searchtext = document.getElementById("search").value
+	var searchtextfiltered = searchtext.replace(" ", "+")
+	if (searchtextfiltered.length > 0) {
+		window.open("https://google.com/search?q="+searchtextfiltered)
+	}
+}
+</script>
+
+</body>
+
+</html>
